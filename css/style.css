@@ -1,4 +1,133 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-font-family: 'Righteous', cursive;
-font-family: 'Roboto', sans-serif;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo,
+.c1-title,
+.c2-title,
+.c3-title {
+    font-family: 'Righteous', cursive;
+}
+
+
+/*__________________________header__________________________*/
+
+.header {
+    background: #CF2B2B;
+    padding: 10px 20px 18px 20px;
+    color: #ffffff;
+    width: 100%;
+    height: 92px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.logo {
+    font-size: 44px;
+    font-weight: 400;
+}
+
+.slogan {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+/*_______________________main__________________________*/
+
+.main {
+    margin: 92px 0px;
+    padding: 0 20px 20px 20px;
+    background: #eeeeee;
+}
+
+.c1-title,
+.c2-title,
+.c3-title {
+    font-size: 26px;
+    font-weight: 400;
+    color: #333333;
+    padding: 30px 0px 17px 0px;
+}
+
+.c1-content,
+.c2-content,
+.c3-content {
+    display: flex;
+    overflow: hidden; 
+}
+
+.option{
+    max-width: 188px;
+    width: 188px;
+    padding: 18px 14px 13px 14px;
+    background: #ffffff;
+    border-radius: 9px;
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    margin: 0px 8px;
+    position: relative
+}
+
+.picture img {
+    width: 144px;
+    height: 87px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.description h1 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333333;
+    padding: 7px 0px 7px 0px;
+}
+
+.description p {
+    font-weight: 300;
+    font-size: 15px;
+    color: #A6A6A6;
+    margin-bottom: 44px;
+}
+
+.price {
+    font-weight: 400;
+    font-size: 16px;
+    position: absolute;
+    bottom: 13px;
+}
+
+.baseboard {
+    height: 92px;
+    width: 100%;
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+
+}
+
+.button {
+    height: 61px;
+    width: 100%;
+    font-size: 20px;
+    color: #ffffff;
+    background: #CBCBCB;
+    border-radius: 75px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+}
