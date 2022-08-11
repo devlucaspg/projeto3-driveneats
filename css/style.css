@@ -62,7 +62,8 @@ body {
 .c2-content,
 .c3-content {
     display: flex;
-    overflow: hidden; 
+    overflow: hidden;
+    overflow-x: scroll
 }
 
 .option{
@@ -103,6 +104,9 @@ body {
     position: absolute;
     bottom: 13px;
 }
+
+
+/*_____________________baseboard________________________*/
 
 .baseboard {
     height: 92px;
