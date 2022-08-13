@@ -1,1 +1,5 @@
-function selecionarComida()
+function selectFood();
+
+function selectDrink();
+
+function selectDessert();
