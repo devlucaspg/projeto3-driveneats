@@ -1,6 +1,8 @@
-let selectedFood;
+let foodSelected;
+let foodName;
+let foodPrice
 
-function selectFood(sFood) {
+function foodSelect(foodS) {
 
     const food = document.querySelector('.c1-content .selected');
 
@@ -8,17 +10,25 @@ function selectFood(sFood) {
         food.classList.remove('selected');
     }
 
-    sFood.classList.add('selected');
+    foodS.classList.add('selected');
 
-    selectedFood = sFood
+    foodSelected = foodS
+    foodName = foodS.querySelector('.description>h1').innerText;
+
+    price = foodS.querySelector('.price>h2').innerText;     //selecionar o preço do prato selecionado
+    price = price.replace(',','.');                         //trocar virgula por ponto
+    price = Number(price);                                  //converter a string para numero
+    foodPrice = price//.toFixed(2);                         //arredondar o numero para 2 casas decimais
 
     request();
     
 };
 
-let selectedDrink;
+let drinkSelected;
+let drinkName;
+let drinkPrice;
 
-function selectDrink(sDrink) {
+function drinkSelect(drinkS) {
 
     const drink = document.querySelector('.c2-content .selected');
 
@@ -26,17 +36,25 @@ function selectDrink(sDrink) {
         drink.classList.remove('selected');
     }
 
-    sDrink.classList.add('selected');
+    drinkS.classList.add('selected');
 
-    selectedDrink = sDrink
+    drinkSelected = drinkS
+    drinkName = drinkS.querySelector('.description>h1').innerText;
+    
+    price = drinkS.querySelector('.price>h2').innerText;    //selecionar o preço da bebida selecionada
+    price = price.replace(',','.');                         //trocar virgula por ponto
+    price = Number(price);                                  //converter a string para numero
+    drinkPrice = price//.toFixed(2);                          //arredondar o numero para 2 casas decimais
     
     request();
 
 };
 
-let selectedDessert;
+let dessertSSelected;
+let dessertName;
+let dessertPrice;
 
-function selectDessert(sDessert) {
+function dessertSelect(dessertS) {
 
     const dessert = document.querySelector('.c3-content .selected');
 
@@ -44,32 +62,48 @@ function selectDessert(sDessert) {
         dessert.classList.remove('selected');
     }
 
-    sDessert.classList.add('selected');
+    dessertS.classList.add('selected');
 
-    selectedDessert = sDessert
+    dessertSSelected = dessertS
+    dessertName = dessertS.querySelector('.description>h1').innerText;
+
+    price = dessertS.querySelector('.price>h2').innerText;  //selecionar o preço da sobremesa selecionada
+    price = price.replace(',','.');                         //trocar virgula por ponto
+    price = Number(price);                                  //converter a string para numero
+    dessertPrice = price//.toFixed(2);                        //arredondar o numero para 2 casas decimais
     
-    request();
+    request ();
     
 };
 
+let totalPrice;
 
 function request(){
-    // se a comida estiver selecionada
-    if ( selectedFood !== undefined ){
-        // se a bebida estiver selecionada
-        if (selectedDrink !== undefined){
-            // se a sobremesa estiver selecionada
-            if (selectedDessert !== undefined){
+    if ( foodSelected !== undefined ){
+        if (drinkSelected !== undefined){
+            if (dessertSSelected !== undefined){
 
-                // pegar botão e adicionar a classe escondido 
                 const button1 = document.querySelector('.button1');
                 button1.classList.add('hidden');
 
-                // pegar botão e remover a classe escondido 
                 const button2 = document.querySelector('.button2');
                 button2.classList.remove('hidden');
                 
+                totalPrice = foodPrice + drinkPrice + dessertPrice;     //somar o preço do combo
             }    
         }
     }
+}
+
+
+function whatsapp() {
+	let text =
+		"Olá, gostaria de fazer o pedido:" + "\n- Prato: " + foodName +
+		"\n- Bebida: " + drinkName +
+		"\n- Sobremesa: " + dessertName +
+		"\nTotal: R$ " + totalPrice.toFixed(2)
+
+	link = "https://wa.me/5566981174164?text=" + encodeURIComponent(text)
+
+	window.open(link, "_blank")
 }
