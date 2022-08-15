@@ -112,6 +112,14 @@ body {
     left: 14px;
 }
 
+ion-icon {
+    color: #32B72F;
+    position: absolute;
+    bottom: 13px;
+    right: 14px;
+    display: none;
+}
+
 
 /*_____________________footer________________________*/
 
@@ -141,4 +149,21 @@ body {
     align-items: center;
     justify-content: center;
     padding: 8px 20px;
+}
+
+
+/*_______________________js__________________________*/
+
+.selected {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+}
+
+.selected ion-icon {
+    display: inline;
+}
+
+.hidden {
+    display: none;
+    background: #32B72F;
+    color: #ffffff;
 }
