@@ -63,7 +63,8 @@ body {
 .c3-content {
     display: flex;
     overflow: hidden;
-    overflow-x: scroll -webkit-scrollbar{display: none;}
+    overflow-x: scroll; 
+    ::-webkit-scrollbar{display: none;}
 }
 
 .food-option,
