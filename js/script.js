@@ -15,10 +15,10 @@ function foodSelect(foodS) {
     foodSelected = foodS
     foodName = foodS.querySelector('.description>h1').innerText;
 
-    price = foodS.querySelector('.price>h2').innerText;     //selecionar o preço do prato selecionado
-    price = price.replace(',','.');                         //trocar virgula por ponto
-    price = Number(price);                                  //converter a string para numero
-    foodPrice = price                                       //arredondar o numero para 2 casas decimais
+    price = foodS.querySelector('.price>h2').innerText;     
+    price = price.replace(',','.');                         
+    price = Number(price);                                  
+    foodPrice = price                                      
 
     request();
     
@@ -41,10 +41,10 @@ function drinkSelect(drinkS) {
     drinkSelected = drinkS
     drinkName = drinkS.querySelector('.description>h1').innerText;
     
-    price = drinkS.querySelector('.price>h2').innerText;    //selecionar o preço da bebida selecionada
-    price = price.replace(',','.');                         //trocar virgula por ponto
-    price = Number(price);                                  //converter a string para numero
-    drinkPrice = price                                      //arredondar o numero para 2 casas decimais
+    price = drinkS.querySelector('.price>h2').innerText;    
+    price = price.replace(',','.');                        
+    price = Number(price);                                 
+    drinkPrice = price                                      
     
     request();
 
@@ -67,10 +67,10 @@ function dessertSelect(dessertS) {
     dessertSelected = dessertS
     dessertName = dessertS.querySelector('.description>h1').innerText;
 
-    price = dessertS.querySelector('.price>h2').innerText;  //selecionar o preço da sobremesa selecionada
-    price = price.replace(',','.');                         //trocar virgula por ponto
-    price = Number(price);                                  //converter a string para numero
-    dessertPrice = price                                    //arredondar o numero para 2 casas decimais
+    price = dessertS.querySelector('.price>h2').innerText;  
+    price = price.replace(',','.');                        
+    price = Number(price);                                  
+    dessertPrice = price                                    
     
     request ();
     
@@ -95,15 +95,37 @@ function request(){
     }
 }
 
+let pname;
+let address;
+
+function confirmScreen(confirmS) {
+	if (confirmS.classList.contains('order-closed')) {
+		document.querySelector('.confirm-screen').classList.remove('hidden')
+	}
+
+	pname = prompt('Informe o seu nome:')
+	address = prompt('Informe o seu endereço:')
+
+    whatsapp();
+
+}
+
 
 function whatsapp() {
 	let text =
-		"Olá, gostaria de fazer o pedido:" + "\n- Prato: " + foodName +
-		"\n- Bebida: " + drinkName +
-		"\n- Sobremesa: " + dessertName +
-		"\nTotal: R$ " + totalPrice.toFixed(2)
+		'Olá, gostaria de fazer o pedido:' + '\n- Prato: ' + foodName +
+		'\n- Bebida: ' + drinkName +
+		'\n- Sobremesa: ' + dessertName +
+		'\nTotal: R$ ' + totalPrice.toFixed(2) +
+        '\n' +
+        '\n Nome: ' + pname +
+        '\n Endereço: ' + address
 
-	link = "https://wa.me/5566981174164?text=" + encodeURIComponent(text)
+	link = 'https://wa.me/5566981174164?text=' + encodeURIComponent(text)
 
-	window.open(link, "_blank")
+	window.open(link, '_blank')
+}
+
+function exitScreen() {
+	document.querySelector('.confirm-screen').classList.add('hidden')
 }

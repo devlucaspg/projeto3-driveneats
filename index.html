@@ -302,12 +302,35 @@
                 </div>
             </div>
         </div>
+        <div class="confirm-screen hidden"> <!--incluir hidden-->
+            <div class="confirm-window">
+                <h1>Confirme seu pedido</h1>
+                <div class="final-food">
+                    <p class="food-name"></p>
+                    <p class="food-price">-</p>
+                </div>
+                <div class="final-drink">
+                    <p class="drink-name">Drink</p>
+                    <p class="drink-price">-</p>
+                </div>
+                <div class="final-dessert">
+                    <p class="dessert-name">Dessert</p>
+                    <p class="dessert-price">-</p>
+                </div>
+                <div class="final-itens">
+                    <p class="name-total">TOTAL</p>
+                    <p class="price-total">-</p>
+                </div>
+                <button class="confirm" onclick="whatsapp()">Tudo certo, pode pedir!</button>
+                <button class="cancel" onclick="exitScreen()">Cancelar</button>
+            </div>
+        </div>
     </div>
     <div class="footer">
         <div class="button1">
             Selecione os 3 itens<br>para fechar o pedido
         </div>
-        <div class="button2 hidden" onclick="whatsapp()">
+        <div class="button2 hidden" onclick="confirmScreen(this)">
             Fechar pedido
         </div>
     </div>
