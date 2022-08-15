@@ -137,10 +137,12 @@ ion-icon {
 
 }
 
-.button {
+.button1,
+.button2 {
     height: 61px;
     width: 100%;
     font-size: 20px;
+    font-weight: 400;
     color: #ffffff;
     background: #CBCBCB;
     border-radius: 50px;
@@ -149,6 +151,11 @@ ion-icon {
     align-items: center;
     justify-content: center;
     padding: 8px 20px;
+}
+
+.button2 {
+    font-weight: 700;
+    background: #32B72F;
 }
 
 
@@ -164,6 +171,4 @@ ion-icon {
 
 .hidden {
     display: none;
-    background: #32B72F;
-    color: #ffffff;
 }

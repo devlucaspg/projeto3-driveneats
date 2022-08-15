@@ -1,3 +1,4 @@
+let selectedFood;
 
 function selectFood(sFood) {
 
@@ -7,8 +8,15 @@ function selectFood(sFood) {
         food.classList.remove('selected');
     }
 
-        sFood.classList.add('selected');
+    sFood.classList.add('selected');
+
+    selectedFood = sFood
+
+    request();
+    
 };
+
+let selectedDrink;
 
 function selectDrink(sDrink) {
 
@@ -18,8 +26,15 @@ function selectDrink(sDrink) {
         drink.classList.remove('selected');
     }
 
-        sDrink.classList.add('selected');
+    sDrink.classList.add('selected');
+
+    selectedDrink = sDrink
+    
+    request();
+
 };
+
+let selectedDessert;
 
 function selectDessert(sDessert) {
 
@@ -29,5 +44,32 @@ function selectDessert(sDessert) {
         dessert.classList.remove('selected');
     }
 
-        sDessert.classList.add('selected');
+    sDessert.classList.add('selected');
+
+    selectedDessert = sDessert
+    
+    request();
+    
 };
+
+
+function request(){
+    // se a comida estiver selecionada
+    if ( selectedFood !== undefined ){
+        // se a bebida estiver selecionada
+        if (selectedDrink !== undefined){
+            // se a sobremesa estiver selecionada
+            if (selectedDessert !== undefined){
+
+                // pegar botão e adicionar a classe escondido 
+                const button1 = document.querySelector('.button1');
+                button1.classList.add('hidden');
+
+                // pegar botão e remover a classe escondido 
+                const button2 = document.querySelector('.button2');
+                button2.classList.remove('hidden');
+                
+            }    
+        }
+    }
+}
