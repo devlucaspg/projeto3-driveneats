@@ -64,7 +64,7 @@ body {
     display: flex;
     overflow: hidden;
     overflow-x: scroll; 
-    ::-webkit-scrollbar{display: none;}
+    /*::-webkit-scrollbar{display: none;}*/
 }
 
 .food-option,
