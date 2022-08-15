@@ -98,16 +98,12 @@ function request(){
 let pname;
 let address;
 
-function confirmScreen(confirmS) {
-	if (confirmS.classList.contains('order-closed')) {
-		document.querySelector('.confirm-screen').classList.remove('hidden')
-	}
+function confirmRequest(confirmR) {
 
 	pname = prompt('Informe o seu nome:')
 	address = prompt('Informe o seu endereço:')
 
     whatsapp();
-
 }
 
 
@@ -124,8 +120,4 @@ function whatsapp() {
 	link = 'https://wa.me/5566981174164?text=' + encodeURIComponent(text)
 
 	window.open(link, '_blank')
-}
-
-function exitScreen() {
-	document.querySelector('.confirm-screen').classList.add('hidden')
 }
