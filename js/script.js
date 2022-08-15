@@ -1,13 +1,33 @@
 
 function selectFood(sFood) {
-    sFood.classList.toggle("selected");
 
+    const food = document.querySelector('.c1-content .selected');
+
+    if ( food !== null ){
+        food.classList.remove('selected');
+    }
+
+        sFood.classList.add('selected');
 };
 
 function selectDrink(sDrink) {
-    sDrink.classList.toggle("selected");
+
+    const drink = document.querySelector('.c2-content .selected');
+
+    if ( drink !== null ){
+        drink.classList.remove('selected');
+    }
+
+        sDrink.classList.add('selected');
 };
 
 function selectDessert(sDessert) {
-    sDessert.classList.toggle("selected");
+
+    const dessert = document.querySelector('.c3-content .selected');
+
+    if ( dessert !== null ){
+        dessert.classList.remove('selected');
+    }
+
+        sDessert.classList.add('selected');
 };
