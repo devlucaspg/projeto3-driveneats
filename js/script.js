@@ -18,7 +18,7 @@ function foodSelect(foodS) {
     price = foodS.querySelector('.price>h2').innerText;     //selecionar o preço do prato selecionado
     price = price.replace(',','.');                         //trocar virgula por ponto
     price = Number(price);                                  //converter a string para numero
-    foodPrice = price//.toFixed(2);                         //arredondar o numero para 2 casas decimais
+    foodPrice = price                                       //arredondar o numero para 2 casas decimais
 
     request();
     
@@ -44,13 +44,13 @@ function drinkSelect(drinkS) {
     price = drinkS.querySelector('.price>h2').innerText;    //selecionar o preço da bebida selecionada
     price = price.replace(',','.');                         //trocar virgula por ponto
     price = Number(price);                                  //converter a string para numero
-    drinkPrice = price//.toFixed(2);                          //arredondar o numero para 2 casas decimais
+    drinkPrice = price                                      //arredondar o numero para 2 casas decimais
     
     request();
 
 };
 
-let dessertSSelected;
+let dessertSelected;
 let dessertName;
 let dessertPrice;
 
@@ -64,13 +64,13 @@ function dessertSelect(dessertS) {
 
     dessertS.classList.add('selected');
 
-    dessertSSelected = dessertS
+    dessertSelected = dessertS
     dessertName = dessertS.querySelector('.description>h1').innerText;
 
     price = dessertS.querySelector('.price>h2').innerText;  //selecionar o preço da sobremesa selecionada
     price = price.replace(',','.');                         //trocar virgula por ponto
     price = Number(price);                                  //converter a string para numero
-    dessertPrice = price//.toFixed(2);                        //arredondar o numero para 2 casas decimais
+    dessertPrice = price                                    //arredondar o numero para 2 casas decimais
     
     request ();
     
@@ -81,7 +81,7 @@ let totalPrice;
 function request(){
     if ( foodSelected !== undefined ){
         if (drinkSelected !== undefined){
-            if (dessertSSelected !== undefined){
+            if (dessertSelected !== undefined){
 
                 const button1 = document.querySelector('.button1');
                 button1.classList.add('hidden');
@@ -89,7 +89,7 @@ function request(){
                 const button2 = document.querySelector('.button2');
                 button2.classList.remove('hidden');
                 
-                totalPrice = foodPrice + drinkPrice + dessertPrice;     //somar o preço do combo
+                totalPrice = foodPrice + drinkPrice + dessertPrice;     
             }    
         }
     }
